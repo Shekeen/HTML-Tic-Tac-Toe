@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+}
+
+.field {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40em;
+    height: 40em;
+}
+
+.cell {
+    display: inline-block;
+    background-color: white;
+    height: 33%;
+    width: 33%;
+    margin: -5px;
+    border-style: solid;
+}
+
+.cell:hover {
+    background-color: yellow;
+}
+
+.cell.cross {
+    background-color: white;
+    background-image: url("img/cross.png");
+    background-size: 100%;
+}
+
+.cell.circle {
+    background-color: white;
+    background-image: url("img/circle.png");
+    background-size: 100%;
+}
