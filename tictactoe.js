@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    var crosses = 0,
+        circles = 0;
     var $cell11 = $('#cell11'),
         $cell12 = $('#cell12'),
         $cell13 = $('#cell13'),
@@ -11,14 +13,19 @@ $(document).ready(function(){
     var $turn = $('span#turn');
 
     $('span.cell').click(function() {
-        if ($(this).hasClass('cross') || $(this).hasClass('circle'))
+        var $this = $(this);
+        if ($this.hasClass('cross') || $this.hasClass('circle'))
             return;
         if ($turn.text() == 'Cross') {
-            $(this).addClass('cross');
+            $this.addClass('cross');
             $turn.text('Circle');
+            crosses++;
         } else if ($turn.text() == 'Circle') {
-            $(this).addClass('circle');
+            $this.addClass('circle');
             $turn.text('Cross');
+            circles++;
         }
+        if (crosses == 5)
+            $turn.text('');
     });
 });
